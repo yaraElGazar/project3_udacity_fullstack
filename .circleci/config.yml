@@ -54,7 +54,11 @@ jobs:
       - node/install:
           node-version: "14.15"
       - eb/setup
-      - aws-cli/setup
+      -run:
+        command: |
+          eb init udagram-eb-aws --region us-east-1 --platform node.js
+          eb create --sample udagram-eb-aws-dev
+      - aws-cli/setup:
       - checkout
       - run:
           name: Deploy App
@@ -65,8 +69,6 @@ jobs:
             npm run frontend:build
             npm run frontend:deploy
             npm run api:install
-            eb init udagram-eb-aws --region us-east-1 --platform node.js
-            eb create --sample udagram-eb-aws-dev
             npm run api:deploy
 
 workflows:
