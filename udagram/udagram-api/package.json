@@ -16,7 +16,7 @@
     "build": "npm install . && npm run clean && tsc && cp -rf src/config www/config",
     "zip": "cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "main": "./www/server.js"
+    "main": "server.js"
   },
   "keywords": [],
   "author": "Gabriel Ruttner",
