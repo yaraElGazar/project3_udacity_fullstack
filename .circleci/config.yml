@@ -61,14 +61,14 @@ jobs:
           # TODO: Install, build, deploy in both apps
           command: |
             echo "Install, build, deploy in both apps"
-            npm run frontend:install
-            npm run frontend:build
-            npm run frontend:deploy
+
             npm run api:install
             eb init udagram-eb-aws --region us-east-1 --platform node.js
             eb create --sample udagram-eb-aws-dev
             npm run api:deploy
-
+            npm run frontend:install
+            npm run frontend:build
+            npm run frontend:deploy
 workflows:
   udagram:
     jobs:
