@@ -63,8 +63,7 @@ jobs:
             echo "Install, build, deploy in both apps"
 
             npm run api:install
-            eb init udagram-eb-aws --region us-east-1 --platform node.js
-            eb create --sample udagram-eb-aws-dev
+            npm run api:build
             npm run api:deploy
             npm run frontend:install
             npm run frontend:build

@@ -6,8 +6,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
-    "deploy": "npm install -f && npm run build && aws s3 cp --recursive --acl public-read ./www s3://project3-udacity-yara/",
+    "build": "ng build",
+    "deploy": "sh bin/deploy.sh",
     "test": "ng test --watch=false",
     "lint": "ng lint",
     "e2e": "ng e2e"
