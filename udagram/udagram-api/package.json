@@ -15,7 +15,7 @@
     "deploy": "npm run build && npm run zip && chmod +x bin/deploy.sh && bin/deploy.sh",
     "build": "npm install . && npm run clean && tsc",
     "zip": "cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\"",
     "main": "server.js"
   },
   "keywords": [],
